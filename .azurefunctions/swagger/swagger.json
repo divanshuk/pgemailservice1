@@ -1,0 +1,75 @@
+﻿{
+  "swagger": "2.0",
+  "info": {
+    "title": "pgemailservice1.azurewebsites.net",
+    "version": "1.0.0"
+  },
+  "host": "pgemailservice1.azurewebsites.net",
+  "basePath": "/",
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/api/sendemail": {
+      "post": {
+        "operationId": "/api/sendemail/post",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "fromemail",
+            "in": "query",
+            "description": "from Email ID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "toemail",
+            "in": "query",
+            "description": "To Email ID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "subject",
+            "in": "query",
+            "description": "Subject of Email",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "query",
+            "description": "Body of Email",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "description": "Replace with Operation Object #http://swagger.io/specification/#operationObject",
+        "responses": {
+          "200": {
+            "description": "Success operation"
+          }
+        },
+        "security": [
+          {
+            "apikeyQuery": []
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {},
+  "securityDefinitions": {
+    "apikeyQuery": {
+      "type": "apiKey",
+      "name": "code",
+      "in": "query"
+    }
+  }
+}
