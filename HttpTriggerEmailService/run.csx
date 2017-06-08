@@ -32,7 +32,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req)
     output = SendEmail(fromemail, toemail, subject, body); 
     return output == false
         ? req.CreateResponse(HttpStatusCode.BadRequest, "Please pass a name on the query string or in the request body")
-        : req.CreateResponse(HttpStatusCode.OK, "Email sent successfully.123");
+        : req.CreateResponse(HttpStatusCode.OK, "{"Success":"OK"}");
 }
 
 private static bool SendEmail(string fromemail, string toemail, string subject, string body)
